@@ -1,0 +1,2 @@
+### 密码模式
+POST {{auth_host}}/oauth/token?client_id=XcWebApp&client_secret=XcWebApp&grant_type=password&username=zhangsan&password=123
