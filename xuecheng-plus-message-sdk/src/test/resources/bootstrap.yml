@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://43.143.246.214:3306/xcplus_content?serverTimezone=UTC&userUnicode=true&useSSL=false&
+    username: root
+    password: xuanyunyi645134
+
+# 日志文件配置路径
+logging:
+  config: classpath:log4j2-dev.xml
+  level:
+    org.springframework.cloud.gateway: trace
