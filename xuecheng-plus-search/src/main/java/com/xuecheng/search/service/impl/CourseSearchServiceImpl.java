@@ -33,7 +33,7 @@ import java.util.*;
 /**
  * @Author planck
  
- * @description 课程搜索service实现类
+ * @Description 课程搜索service实现类
  * @Date 2023/4/24 22:48
  */
 @Slf4j

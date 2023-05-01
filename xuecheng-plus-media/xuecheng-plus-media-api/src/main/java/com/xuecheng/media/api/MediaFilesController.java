@@ -17,7 +17,7 @@ import java.io.IOException;
 
 /**
  * @author Planck
- * @description 媒资文件管理接口
+ * @Description 媒资文件管理接口
  * @Date 2023/4/2 11:29
  */
 @Api(value = "媒资文件管理接口", tags = "媒资文件管理接口")

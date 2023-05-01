@@ -7,7 +7,7 @@ import lombok.ToString;
 /**
  * @Author planck
  
- * @description 媒资文件查询请求模型类
+ * @Description 媒资文件查询请求模型类
  * @Date 2023/4/10 8:53
  */
 @Data

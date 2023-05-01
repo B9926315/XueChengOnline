@@ -21,7 +21,7 @@ import java.io.IOException;
 
 /**
  * @Author planck
- * @description 课程索引管理接口实现
+ * @Description 课程索引管理接口实现
  * @Date 2023/4/25 7:23
  */
 @Slf4j

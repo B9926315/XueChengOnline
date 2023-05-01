@@ -9,7 +9,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 /**
- * @description 添加课程dto
+ * @Description 添加课程dto
  * @author Planck
  * @date 2023/3/26 17:40
  

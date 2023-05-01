@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * @description 课程搜索接口
+ * @Description 课程搜索接口
  * @Author planck
  * @Date 2023/4/24 22:31
  

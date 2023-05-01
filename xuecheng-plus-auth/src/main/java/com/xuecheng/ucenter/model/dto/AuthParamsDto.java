@@ -7,7 +7,7 @@ import java.util.Map;
 
 /**
  * @Author planck
- * @description 认证用户请求参数
+ * @Description 认证用户请求参数
  * @Date 2023/4/29 10:56
  */
 @Data

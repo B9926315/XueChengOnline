@@ -5,7 +5,7 @@ import lombok.Data;
 
 /**
  * @author Planck
- * @description 课程基本信息dto
+ * @Description 课程基本信息dto
  * @date 2023/3/26 17:44
  */
 @Data

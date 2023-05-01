@@ -6,10 +6,10 @@ import com.xuecheng.dto.*;
 import com.xuecheng.exception.ValidationGroups;
 import com.xuecheng.pojo.CourseBase;
 import com.xuecheng.service.CourseBaseInfoService;
+import com.xuecheng.utils.SecurityUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,7 +41,7 @@ public class CourseBaseInfoController {
     @GetMapping("/course/{courseId}")
     public CourseBaseInfoDto getCourseBaseById(@PathVariable Long courseId){
         //获取当前用户身份
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        SecurityUtil.XcUser user = SecurityUtil.getUser();
         return courseBaseInfoService.getCourseBaseInfo(courseId);
     }
     @ApiOperation("修改课程")

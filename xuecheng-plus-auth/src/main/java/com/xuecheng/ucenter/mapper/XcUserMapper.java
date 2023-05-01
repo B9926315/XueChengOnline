@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Mapper;
  *  Mapper 接口
  * </p>
  *
- * @author itcast
+ * @Author planck
  */
 @Mapper
 public interface XcUserMapper extends BaseMapper<XcUser> {

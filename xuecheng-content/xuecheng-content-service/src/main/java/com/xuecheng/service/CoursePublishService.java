@@ -29,13 +29,13 @@ public interface CoursePublishService {
      */
     void coursePublish(Long companyId,Long courseId);
     /**
-     * @description 课程静态化
+     * @Description 课程静态化
      * @param courseId  课程id
      * @return File 静态化文件
      */
     File generateCourseHtml(Long courseId);
     /**
-     * @description 上传课程静态化页面
+     * @Description 上传课程静态化页面
      * @param file  静态化文件
      */
     void  uploadCourseHtml(Long courseId,File file);

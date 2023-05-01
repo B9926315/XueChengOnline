@@ -10,7 +10,7 @@ import java.util.concurrent.*;
 
 /**
  * @author planck
- * @description 消息处理抽象类
+ * @Description 消息处理抽象类
  * @Date 2023/4/21 19:44
  */
 @Slf4j
@@ -23,11 +23,11 @@ public abstract class MessageProcessAbstract {
     /**
      * @param mqMessage 执行任务内容
      * @return boolean true:处理成功，false处理失败
-     * @description 任务处理
+     * @Description 任务处理
      */
     public abstract boolean execute(MqMessage mqMessage);
     /**
-     * @description 扫描消息表多线程执行任务
+     * @Description 扫描消息表多线程执行任务
      * @param shardIndex 分片序号
      * @param shardTotal 分片总数
      * @param messageType  消息类型

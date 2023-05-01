@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @description 用户扩展信息
+ * @Description 用户扩展信息
  * @Author planck
  * @Date 2023/4/30 13:56
  

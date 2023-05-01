@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * @author planck
- * @description 课程索引接口
+ * @Description 课程索引接口
  * @Date 2023/4/24 22:31
  */
 @Api(value = "课程信息索引接口", tags = "课程信息索引接口")

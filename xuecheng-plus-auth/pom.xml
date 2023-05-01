@@ -10,7 +10,6 @@
     </parent>
     <artifactId>xuecheng-plus-auth</artifactId>
 
-
     <dependencies>
         <!--Spring Security-->
         <dependency>
@@ -100,6 +99,4 @@
             <artifactId>okhttp</artifactId>
         </dependency>
     </dependencies>
-
-
 </project>

@@ -5,7 +5,7 @@ import com.xuecheng.search.po.CourseIndex;
 /**
  * @Author planck
  
- * @description 课程索引service
+ * @Description 课程索引service
  * @Date 2023/4/24 22:40
  */
 public interface IndexService {
@@ -15,7 +15,7 @@ public interface IndexService {
      * @param id 主键
      * @param object 索引对象
      * @return Boolean true表示成功,false失败
-     * @description 添加索引
+     * @Description 添加索引
      * @Author planck
      * @Date 2023/4/24 22:57
      */
@@ -23,7 +23,7 @@ public interface IndexService {
 
 
     /**
-     * @description 更新索引
+     * @Description 更新索引
      * @param indexName 索引名称
      * @param id 主键
      * @param object 索引对象
@@ -34,7 +34,7 @@ public interface IndexService {
     public Boolean updateCourseIndex(String indexName,String id,Object object);
 
     /**
-     * @description 删除索引
+     * @Description 删除索引
      * @param indexName 索引名称
      * @param id  主键
      * @return java.lang.Boolean

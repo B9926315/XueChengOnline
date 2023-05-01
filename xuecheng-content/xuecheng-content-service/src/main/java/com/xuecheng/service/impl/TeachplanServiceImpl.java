@@ -222,7 +222,7 @@ public class TeachplanServiceImpl implements TeachplanService {
     }
 
     /**
-     * @description 获取最新的排序号
+     * @Description 获取最新的排序号
      * @param courseId  课程id
      * @param parentId  父课程计划id
      * @return int 最新排序号

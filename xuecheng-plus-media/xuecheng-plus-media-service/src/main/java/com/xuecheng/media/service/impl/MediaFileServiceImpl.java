@@ -178,7 +178,7 @@ public class MediaFileServiceImpl implements MediaFileService {
 
     /**
      * @param fileMd5 文件的md5
-     * @description 检查文件是否存在
+     * @Description 检查文件是否存在
      */
     @Override
     public RestResponse<Boolean> checkFile(String fileMd5) {
@@ -212,7 +212,7 @@ public class MediaFileServiceImpl implements MediaFileService {
      * @param fileMd5    文件的md5
      * @param chunkIndex 分块序号
      *                   MD5的前两位分别作为两级子目录，然后下面是chunk目录，存储分块文件
-     * @description 检查分块是否存在
+     * @Description 检查分块是否存在
      */
     @Override
     public RestResponse<Boolean> checkChunk(String fileMd5, int chunkIndex) {

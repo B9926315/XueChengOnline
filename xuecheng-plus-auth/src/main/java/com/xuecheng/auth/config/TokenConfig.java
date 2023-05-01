@@ -18,14 +18,7 @@ public class TokenConfig {
     private String SIGNING_KEY = "mq123";
 
     @Autowired
-    TokenStore tokenStore;
-
-//    @Bean
-//    public TokenStore tokenStore() {
-//        //使用内存存储令牌（普通令牌）
-//        return new InMemoryTokenStore();
-//    }
-
+    private TokenStore tokenStore;
     @Autowired
     private JwtAccessTokenConverter accessTokenConverter;
 

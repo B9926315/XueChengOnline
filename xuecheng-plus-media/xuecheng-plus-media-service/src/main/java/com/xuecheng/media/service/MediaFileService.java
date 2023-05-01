@@ -7,7 +7,7 @@ import com.xuecheng.media.model.po.MediaFiles;
 import java.io.File;
 
 /**
- * @description 媒资文件管理业务类
+ * @Description 媒资文件管理业务类
  * @Author Planck
  * @Date 2023/4/2 8:55
  */
@@ -18,7 +18,7 @@ public interface MediaFileService {
      * @param pageParams          分页参数
      * @param queryMediaParamsDto 查询条件
      * @return com.xuecheng.base.model.PageResult<com.xuecheng.media.model.po.MediaFiles>
-     * @description 媒资文件查询方法
+     * @Description 媒资文件查询方法
      */
     PageResult<MediaFiles> queryMediaFiles(Long companyId, PageParams pageParams, QueryMediaParamsDto queryMediaParamsDto);
 
@@ -34,14 +34,14 @@ public interface MediaFileService {
 
     /**
      * @param fileMd5 文件的md5
-     * @description 检查文件是否存在
+     * @Description 检查文件是否存在
      */
     RestResponse<Boolean> checkFile(String fileMd5);
 
     /**
      * @param fileMd5    文件的md5
      * @param chunkIndex 分块序号
-     * @description 检查分块是否存在
+     * @Description 检查分块是否存在
      */
     RestResponse<Boolean> checkChunk(String fileMd5, int chunkIndex);
 

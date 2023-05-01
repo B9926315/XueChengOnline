@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.time.LocalDateTime;
 
 /**
- * @description 课程索引与搜索测试
+ * @Description 课程索引与搜索测试
  * @Author planck
  * @Date 2023/4/25 7:39
  
