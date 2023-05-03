@@ -1,14 +1,19 @@
 package com.xuecheng.ucenter.service.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.xuecheng.ucenter.mapper.XcMenuMapper;
 import com.xuecheng.ucenter.model.dto.AuthParamsDto;
 import com.xuecheng.ucenter.model.dto.XcUserExt;
+import com.xuecheng.ucenter.model.po.XcMenu;
 import com.xuecheng.ucenter.service.AuthService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Author Planck
@@ -20,6 +25,8 @@ public class UserServiceImpl implements UserDetailsService {
     //注入Spring容器
     @Autowired
     private ApplicationContext applicationContext;
+    @Autowired
+    private XcMenuMapper xcMenuMapper;
 
     /**
      * @param s 自定义JSON用户信息
@@ -41,7 +48,7 @@ public class UserServiceImpl implements UserDetailsService {
         AuthService authService = applicationContext.getBean(beanName, AuthService.class);
         //调用方法，完成认证
         XcUserExt user = authService.execute(authParamsDto);
-        //封装用户信息
+        //封装用户信息，根据UserDetails生成令牌
         return getUserPrincipal(user);
     }
 
@@ -51,6 +58,16 @@ public class UserServiceImpl implements UserDetailsService {
     protected UserDetails getUserPrincipal(XcUserExt xcUser) {
         String password = xcUser.getPassword();
         String[] authorities={"test"};
+        //根据用户ID查询用户权限
+        List<XcMenu> xcMenus = xcMenuMapper.selectPermissionByUserId(xcUser.getId());
+        if (xcMenus.size()>0){
+            List<String> permission=new ArrayList<>();
+            xcMenus.forEach(m->{
+                permission.add(m.getCode());
+            });
+            //这里的new String[0]目的是申明类型，长度置零即可
+            authorities=permission.toArray(new String[0]);
+        }
         /*
         扩展用户身份，将用户的信息转成JSON后存储在withUsername中
          */

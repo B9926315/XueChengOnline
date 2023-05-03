@@ -7,6 +7,7 @@ import com.xuecheng.checkcode.service.AbstractCheckCodeService;
 import com.xuecheng.checkcode.service.CheckCodeService;
 import com.xuecheng.utils.EncryptUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import sun.misc.BASE64Encoder;
 
@@ -15,6 +16,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.Objects;
 
 /**
  * @Author planck
@@ -23,7 +25,8 @@ import java.io.IOException;
  */
 @Service("PicCheckCodeService")
 public class PicCheckCodeServiceImpl extends AbstractCheckCodeService implements CheckCodeService {
-
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
 
     @Autowired
     private DefaultKaptcha kaptcha;
@@ -59,6 +62,16 @@ public class PicCheckCodeServiceImpl extends AbstractCheckCodeService implements
         checkCodeResultDto.setKey(key);
         return checkCodeResultDto;
 
+    }
+    /**
+     * 注册和找回密码校验验证码
+     * @param code  验证码
+     * @param key Redis Key
+     */
+    @Override
+    public boolean verifyRegisterCode(String key, String code) {
+        String redisCode = stringRedisTemplate.opsForValue().get(key);
+        return Objects.nonNull(redisCode) && Objects.equals(redisCode, code.trim());
     }
 
     private String createPic(String code) {

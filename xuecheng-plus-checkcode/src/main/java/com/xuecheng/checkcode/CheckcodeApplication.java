@@ -8,5 +8,4 @@ public class CheckcodeApplication {
     public static void main(String[] args) {
         SpringApplication.run(CheckcodeApplication.class, args);
     }
-
 }

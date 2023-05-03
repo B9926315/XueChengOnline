@@ -27,6 +27,12 @@ public interface CheckCodeService {
     boolean verify(String key, String code);
 
     /**
+     * 注册校验验证码
+     * @param code  验证码
+     * @param key Redis Key
+     */
+    boolean verifyRegisterCode(String key,String code);
+    /**
      * @Description 验证码生成器
      * @Author planck
      * @Date 2023/4/29 16:34

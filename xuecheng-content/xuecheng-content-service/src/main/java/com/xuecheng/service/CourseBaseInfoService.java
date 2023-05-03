@@ -17,7 +17,7 @@ public interface CourseBaseInfoService {
      * @param queryCourseParamsDto 查询条件
      * @return 课程信息
      */
-    PageResult<CourseBase> queryCourseBaseList(PageParams pageParams, QueryCourseParamsDto queryCourseParamsDto);
+    PageResult<CourseBase> queryCourseBaseList(Long companyId,PageParams pageParams, QueryCourseParamsDto queryCourseParamsDto);
 
     /**
      * 新增课程,要向两张表写数据，分别是Course_Market与course_base

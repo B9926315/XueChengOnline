@@ -19,6 +19,12 @@ public class CheckCodeClientFactory implements FallbackFactory<CheckCodeClient> 
                 log.debug("调用验证码服务熔断异常:{}", throwable.getMessage());
                 return null;
             }
+
+            @Override
+            public Boolean verifyRegisterCode(String key, String code) {
+                log.error("调用验证码服务熔断异常:{}", throwable.getMessage());
+                return null;
+            }
         };
     }
 }

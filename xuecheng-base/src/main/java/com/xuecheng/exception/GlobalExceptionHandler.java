@@ -29,6 +29,9 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public RestErrorResponse exception(Exception e) {
         log.error("【系统异常】{}",e.getMessage(),e);
+        if ("不允许访问".equals(e.getMessage())){
+            return new RestErrorResponse("您没有权限访问此资源");
+        }
         return new RestErrorResponse(CommonError.UNKOWN_ERROR.getErrMessage());
 
     }

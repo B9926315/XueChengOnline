@@ -12,4 +12,6 @@ import org.springframework.web.bind.annotation.*;
 public interface CheckCodeClient {
     @PostMapping("/verify")
     Boolean verify(@RequestParam("key") String key, @RequestParam("code") String code);
+    @PostMapping(value = "/verifyregistercode")
+    Boolean verifyRegisterCode(@RequestParam("key") String key, @RequestParam("code") String code);
 }

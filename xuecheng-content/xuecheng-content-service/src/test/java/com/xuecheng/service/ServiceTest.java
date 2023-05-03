@@ -31,7 +31,7 @@ public class ServiceTest {
         PageParams pageParams = new PageParams(1L, 3L);
         QueryCourseParamsDto courseParamsDto = new QueryCourseParamsDto();
         courseParamsDto.setCourseName("java");
-        PageResult<CourseBase> list = courseBaseInfoService.queryCourseBaseList(pageParams, courseParamsDto);
+        PageResult<CourseBase> list = courseBaseInfoService.queryCourseBaseList(1232141425L,pageParams, courseParamsDto);
         System.out.println(list.getItems());
     }
 

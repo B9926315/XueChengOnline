@@ -75,6 +75,4 @@ public abstract class AbstractCheckCodeService implements CheckCodeService {
         }
         return result;
     }
-
-
 }
