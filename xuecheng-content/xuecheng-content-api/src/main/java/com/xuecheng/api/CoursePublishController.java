@@ -20,40 +20,52 @@ public class CoursePublishController {
     private CoursePublishService coursePublishService;
 
     @GetMapping("/coursepreview/{courseId}")
-    public ModelAndView preview(@PathVariable("courseId") Long courseId){
+    public ModelAndView preview(@PathVariable("courseId") Long courseId) {
         CoursePreviewDto coursePreviewInfo = coursePublishService.getCoursePreviewInfo(courseId);
-        ModelAndView modelAndView=new ModelAndView();
-        modelAndView.addObject("model",coursePreviewInfo);
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("model", coursePreviewInfo);
         //根据视图名和配置文件自动加.ftl,然后找到模板
         modelAndView.setViewName("courseInfo");
         return modelAndView;
     }
+
     /**
      * 将课程提交审核
+     *
      * @param courseId 课程ID
      */
     @ResponseBody
     @PostMapping("/courseaudit/commit/{courseId}")
-    public void commitAudit(@PathVariable Long courseId){
-        coursePublishService.commitAudit(1232141425L,courseId);
+    public void commitAudit(@PathVariable Long courseId) {
+        coursePublishService.commitAudit(1232141425L, courseId);
     }
 
     /**
-     *  审核通过后，进行课程发布
-     *  需要做三件事：Redis缓存、elasticsearch搜索索引、将课程静态页面存进MinIO
+     * 审核通过后，进行课程发布
+     * 需要做三件事：Redis缓存、elasticsearch搜索索引、将课程静态页面存进MinIO
+     *
      * @param courseId 课程ID
      */
     @ApiOperation("课程发布")
     @ResponseBody
     @PostMapping("/coursepublish/{courseId}")
-    public void coursePublish(@PathVariable Long courseId){
-        Long companyId=1232141425L;
-        coursePublishService.coursePublish(companyId,courseId);
+    public void coursePublish(@PathVariable Long courseId) {
+        Long companyId = 1232141425L;
+        coursePublishService.coursePublish(companyId, courseId);
     }
+
     @ApiOperation("查询课程发布信息")
     @ResponseBody
     @GetMapping("/r/coursepublish/{courseId}")
-    public CoursePublish getCoursePublish(@PathVariable("courseId") Long courseId){
+    public CoursePublish getCoursePublish(@PathVariable("courseId") Long courseId) {
         return coursePublishService.getCoursePublish(courseId);
+    }
+
+    @ApiOperation("获取课程发布信息")
+    @ResponseBody
+    @GetMapping("/course/whole/{courseId}")
+    public CoursePreviewDto getCoursePublishFromHtml(@PathVariable("courseId") Long courseId) {
+        //获取课程预览信息，用于播放视频时右侧目录栏
+        return coursePublishService.getCoursePreviewInfo(courseId);
     }
 }

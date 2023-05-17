@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Objects;
 
 /**
- * @author Mr.M
  * @version 1.0
+ * @Author Planck
  * @description 我的课程表接口
  * @date 2022/10/25 9:40
  */
@@ -33,7 +33,7 @@ public class MyCourseTablesController {
     public XcChooseCourseDto addChooseCourse(@PathVariable("courseId") Long courseId) {
         //拿到用户ID
         SecurityUtil.XcUser user = SecurityUtil.getUser();
-        if (Objects.isNull(user)){
+        if (Objects.isNull(user)) {
             XueChengPlusException.cast("用户未登录");
         }
         String userId = user.getId();
@@ -46,16 +46,24 @@ public class MyCourseTablesController {
     public XcCourseTablesDto getLearnstatus(@PathVariable("courseId") Long courseId) {
         //拿到用户ID
         SecurityUtil.XcUser user = SecurityUtil.getUser();
-        if (Objects.isNull(user)){
+        if (Objects.isNull(user)) {
             XueChengPlusException.cast("用户未登录");
         }
         String userId = user.getId();
-        return myCourseTableService.getLearningStatus(userId,courseId);
+        return myCourseTableService.getLearningStatus(userId, courseId);
     }
 
     @ApiOperation("我的课程表")
     @GetMapping("/mycoursetable")
     public PageResult<XcCourseTables> mycoursetable(MyCourseTableParams params) {
-        return null;
+        //拿到用户ID
+        SecurityUtil.XcUser user = SecurityUtil.getUser();
+        if (Objects.isNull(user)) {
+            XueChengPlusException.cast("用户未登录");
+        }
+        String userId = user.getId();
+        params.setUserId(userId);
+        PageResult<XcCourseTables> xcCourseTablesPageResult = myCourseTableService.myCourseTables(params);
+        return xcCourseTablesPageResult;
     }
 }

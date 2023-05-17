@@ -6,7 +6,7 @@ import lombok.ToString;
 
 /**
  * @description 我的课程表模型类
- * @author Mr.M
+ * @Author Planck
  * @date 2022/10/2 16:09
  * @version 1.0
  */

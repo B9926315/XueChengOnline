@@ -5,7 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * @author Mr.M
+ * @Author Planck
  * @version 1.0
  * @description 内容管理远程接口
  * @date 2022/10/25 9:13

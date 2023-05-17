@@ -1,7 +1,8 @@
 package com.xuecheng.learning.service;
 
-import com.xuecheng.learning.model.dto.XcChooseCourseDto;
-import com.xuecheng.learning.model.dto.XcCourseTablesDto;
+import com.xuecheng.baseModel.PageResult;
+import com.xuecheng.learning.model.dto.*;
+import com.xuecheng.learning.model.po.XcCourseTables;
 
 /**
  * @Author Planck
@@ -21,4 +22,9 @@ public interface MyCourseTableService {
      * @param courseId 课程ID
      */
     XcCourseTablesDto getLearningStatus(String userId, Long courseId);
+
+    /**
+     * 查询我的课程表
+     */
+    PageResult<XcCourseTables> myCourseTables(MyCourseTableParams params);
 }
