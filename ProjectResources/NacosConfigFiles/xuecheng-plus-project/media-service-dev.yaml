@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/xuecheng_media?serverTimezone=UTC&userUnicode=true&useSSL=false&
+    username: root
+    password: password
+  cloud:
+   config:
+    override-none: true
+  servlet:
+   multipart:
+    max-file-size: 30MB # 单个文件限制大小
+    max-request-size: 50MB # 单次请求的大小限制
+
+minio:
+  endpoint: http://localhost:9000
+  accessKey: planck
+  secretKey: xuanyunyi645134
+  bucket:
+    files: mediafiles
+    videofiles: video
+xxl:
+  job:
+    admin: 
+      addresses: http://localhost:8083/xxl-job-admin
+    executor:
+      appname: media-process-service
+      address: 
+      ip: 
+      port: 9999
+      logpath: /data/applogs/xxl-job/jobhandler
+      logretentiondays: 30
+    accessToken: default_token
+
+videoprocess:
+ ffmpegpath: D:/soft/ffmpeg/ffmpeg.exe
+

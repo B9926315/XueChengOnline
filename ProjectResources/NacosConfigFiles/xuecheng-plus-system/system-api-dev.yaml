@@ -1,0 +1,4 @@
+server:
+  servlet:
+    context-path: /system
+  port: 63110

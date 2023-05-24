@@ -1,0 +1,9 @@
+server:
+  servlet:
+    context-path: /checkcode
+  port: 63075
+spring:
+  mail:
+    host: smtp.126.com
+    username: username@126.com
+    password: password

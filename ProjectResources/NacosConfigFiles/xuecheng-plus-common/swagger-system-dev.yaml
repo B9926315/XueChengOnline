@@ -1,0 +1,6 @@
+swagger:
+  title: "学成在线系统管理"
+  description: "系统管理接口"
+  base-package: com.xuecheng
+  enabled: true
+  version: 1.0.0

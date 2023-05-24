@@ -1,0 +1,6 @@
+swagger:
+  title: "学成在线项目接口文档"
+  description: "内容系统管理系统对课程接口文档"
+  base-package: com.xuecheng
+  enabled: true
+  version: 1.0

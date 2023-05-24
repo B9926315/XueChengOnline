@@ -18,6 +18,7 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
@@ -51,6 +52,8 @@ public class CoursePublishServiceImpl implements CoursePublishService {
     private CourseBaseMapper courseBaseMapper;
     @Autowired
     private MqMessageService mqMessageService;
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
 
     /**
      * 为课程预览模板页面提供数据
@@ -259,6 +262,7 @@ public class CoursePublishServiceImpl implements CoursePublishService {
      */
     @Override
     public CoursePublish getCoursePublish(Long courseId) {
+
         return coursePublishMapper.selectById(courseId);
     }
 }

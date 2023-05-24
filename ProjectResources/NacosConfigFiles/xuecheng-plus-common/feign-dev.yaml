@@ -1,0 +1,17 @@
+feign:
+  hystrix:
+    enabled: true
+  circuitbreaker:
+    enabled: true  # 开启熔断
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000  #熔断超时时间，ms
+ribbon:
+  ConnectTimeout: 60000 #连接超时时间
+  ReadTimeout: 60000 #读超时时间
+  MaxAutoRetries: 0 #重试次数
+  MaxAutoRetriesNextServer: 1 #切换实例的重试次数
